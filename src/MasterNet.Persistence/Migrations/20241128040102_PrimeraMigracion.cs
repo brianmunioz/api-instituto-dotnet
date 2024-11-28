@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace MasterNet.Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class FirstMigration : Migration
+    public partial class PrimeraMigracion : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -148,15 +148,15 @@ namespace MasterNet.Persistence.Migrations
                 columns: new[] { "Id", "Descripcion", "FechaPublicacion", "Titulo" },
                 values: new object[,]
                 {
-                    { new Guid("05e98d6c-d11b-4fec-9dd5-06c8663a2643"), "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J", new DateTime(2024, 11, 27, 17, 4, 10, 277, DateTimeKind.Utc).AddTicks(4940), "Incredible Soft Towels" },
-                    { new Guid("2b1ed9e7-4f5f-440f-b59c-563fb054d2e5"), "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive", new DateTime(2024, 11, 27, 17, 4, 10, 277, DateTimeKind.Utc).AddTicks(4791), "Incredible Cotton Chair" },
-                    { new Guid("47fb144d-9ec7-4afe-95d3-e51c52e2eaf7"), "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive", new DateTime(2024, 11, 27, 17, 4, 10, 277, DateTimeKind.Utc).AddTicks(5046), "Unbranded Steel Chair" },
-                    { new Guid("4facf808-867e-471b-811b-2b6467c78a16"), "The Football Is Good For Training And Recreational Purposes", new DateTime(2024, 11, 27, 17, 4, 10, 277, DateTimeKind.Utc).AddTicks(4904), "Awesome Cotton Bike" },
-                    { new Guid("893111be-89eb-4fbb-9a4a-a1603dca9d6a"), "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles", new DateTime(2024, 11, 27, 17, 4, 10, 277, DateTimeKind.Utc).AddTicks(5016), "Intelligent Frozen Soap" },
-                    { new Guid("94954648-b211-47db-8554-88e91f8811a6"), "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design", new DateTime(2024, 11, 27, 17, 4, 10, 277, DateTimeKind.Utc).AddTicks(4843), "Generic Concrete Chips" },
-                    { new Guid("9f7b9235-c73c-4bd0-91ab-86b84413aaff"), "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles", new DateTime(2024, 11, 27, 17, 4, 10, 277, DateTimeKind.Utc).AddTicks(5126), "Rustic Plastic Chicken" },
-                    { new Guid("ebf0570a-b352-49b6-a011-2a375c90139c"), "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support", new DateTime(2024, 11, 27, 17, 4, 10, 277, DateTimeKind.Utc).AddTicks(5077), "Unbranded Granite Fish" },
-                    { new Guid("fd300c79-3721-4f74-a7d8-cbf3f1940fad"), "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016", new DateTime(2024, 11, 27, 17, 4, 10, 277, DateTimeKind.Utc).AddTicks(4974), "Small Rubber Pants" }
+                    { new Guid("1ddc2737-4639-4919-af32-925042759147"), "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive", new DateTime(2024, 11, 28, 4, 1, 1, 530, DateTimeKind.Utc).AddTicks(2579), "Handmade Wooden Shirt" },
+                    { new Guid("4d46a85d-daa0-4b96-ab83-e12ee9387978"), "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals", new DateTime(2024, 11, 28, 4, 1, 1, 530, DateTimeKind.Utc).AddTicks(2181), "Handmade Rubber Mouse" },
+                    { new Guid("50d9b3fe-8472-4960-b15c-aa54e3f6ebe3"), "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support", new DateTime(2024, 11, 28, 4, 1, 1, 530, DateTimeKind.Utc).AddTicks(2418), "Tasty Cotton Towels" },
+                    { new Guid("52712dfa-d399-4fcf-a21b-00cd9e2c80dd"), "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive", new DateTime(2024, 11, 28, 4, 1, 1, 530, DateTimeKind.Utc).AddTicks(2312), "Handmade Plastic Shoes" },
+                    { new Guid("93b6c5ac-de2e-4590-a6a3-962c85184bac"), "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles", new DateTime(2024, 11, 28, 4, 1, 1, 530, DateTimeKind.Utc).AddTicks(2612), "Generic Soft Pants" },
+                    { new Guid("c40d304e-74eb-446f-9955-b64732b3f279"), "The Football Is Good For Training And Recreational Purposes", new DateTime(2024, 11, 28, 4, 1, 1, 530, DateTimeKind.Utc).AddTicks(2453), "Awesome Metal Mouse" },
+                    { new Guid("ceba950d-ae05-4c3f-9708-3636c3119b13"), "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality", new DateTime(2024, 11, 28, 4, 1, 1, 530, DateTimeKind.Utc).AddTicks(2352), "Sleek Plastic Chicken" },
+                    { new Guid("d4df2955-3374-4c5d-bb3c-a9a0db72df98"), "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals", new DateTime(2024, 11, 28, 4, 1, 1, 530, DateTimeKind.Utc).AddTicks(2484), "Unbranded Fresh Bike" },
+                    { new Guid("ef1ffaa8-bf70-40ca-a42e-eacae96bad84"), "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals", new DateTime(2024, 11, 28, 4, 1, 1, 530, DateTimeKind.Utc).AddTicks(2383), "Sleek Granite Shoes" }
                 });
 
             migrationBuilder.InsertData(
@@ -164,22 +164,22 @@ namespace MasterNet.Persistence.Migrations
                 columns: new[] { "Id", "Apellidos", "Grado", "Nombre" },
                 values: new object[,]
                 {
-                    { new Guid("09036d66-39b2-4fa6-9da0-20c5b7ba9ccb"), "Muller", "Global Program Architect", "Kenya" },
-                    { new Guid("178879a6-3062-4a04-814b-3d3e2e07dd24"), "Waelchi", "Corporate Paradigm Specialist", "Amie" },
-                    { new Guid("2404e5f9-508f-4a9a-97cf-ce744ed2f7c0"), "Rice", "Chief Infrastructure Director", "Ron" },
-                    { new Guid("2537ec57-c7b2-43c7-9914-1b940397f86e"), "Brown", "International Implementation Liaison", "Maurice" },
-                    { new Guid("2b76e08c-8983-469e-8014-5cbacbe90f87"), "Waters", "Forward Markets Designer", "Jaylan" },
-                    { new Guid("42a3e746-2e98-41c6-94d1-b53ee86f07ac"), "Kirlin", "Investor Quality Producer", "Linwood" },
-                    { new Guid("57e189a8-3505-4da0-a0ae-6e32395ec0b7"), "King", "Legacy Interactions Planner", "Freida" },
-                    { new Guid("5af9deb1-5914-471e-8f74-52c914ba76bb"), "Kirlin", "Regional Brand Agent", "Albin" },
-                    { new Guid("a7e8e2f5-ce7d-4686-bd52-a22127bb95aa"), "Williamson", "Legacy Functionality Representative", "Danial" },
-                    { new Guid("e45507f6-daef-41b0-90e8-94d0f745e56c"), "Crist", "Internal Interactions Analyst", "Kara" }
+                    { new Guid("004a10b9-d65d-457f-965c-3242e26a7541"), "Crooks", "Forward Group Analyst", "Katarina" },
+                    { new Guid("01bb879f-418b-4487-8aab-db310de339fa"), "Crist", "Principal Branding Assistant", "Yadira" },
+                    { new Guid("02a7fee8-dd7d-4886-b4e5-d34715dd606d"), "Larkin", "Dynamic Program Technician", "Morgan" },
+                    { new Guid("204b0c6c-35f4-437f-b6d7-cb60bc19efe9"), "Halvorson", "Regional Interactions Analyst", "Anais" },
+                    { new Guid("2b7ba4d7-6e70-437e-9448-beb24c0cf26f"), "Kuhlman", "Investor Assurance Assistant", "Angelo" },
+                    { new Guid("51913e73-fad8-454f-9a67-2682337cd9bf"), "Frami", "Product Creative Technician", "Cesar" },
+                    { new Guid("731f4f91-04cf-45cc-986b-c1e00b9f8704"), "Feeney", "Direct Metrics Liaison", "Eliezer" },
+                    { new Guid("b658b37b-899c-4b6c-b82b-bb4bc5f7115a"), "Mosciski", "Senior Mobility Manager", "Florine" },
+                    { new Guid("c15edab1-e03d-4bed-9173-a0bfee362e5e"), "Schroeder", "Investor Communications Agent", "Jan" },
+                    { new Guid("fc918021-cba4-47bc-b5e7-fc62bdbfa784"), "Gottlieb", "District Functionality Assistant", "Bill" }
                 });
 
             migrationBuilder.InsertData(
                 table: "precios",
                 columns: new[] { "Id", "Nombre", "PrecioActual", "PrecioPromocion" },
-                values: new object[] { new Guid("e6ddc217-67c0-488f-905f-7cdf87c3e6b8"), "Precio Regular", 10.0m, 8.0m });
+                values: new object[] { new Guid("2a88d250-5990-4c0b-af30-93ce0d9ab96a"), "Precio Regular", 10.0m, 8.0m });
 
             migrationBuilder.CreateIndex(
                 name: "IX_calificaciones_CursoId",

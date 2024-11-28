@@ -1,10 +1,12 @@
 using Bogus;
 using MasterNet.Domain;
+using MasterNet.Persistence.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace MasterNet.Persistence;
 
-public class MasterNetDbContext : DbContext
+public class MasterNetDbContext : IdentityDbContext<AppUser>
 {
 
     public DbSet<Curso>? Cursos {get;set;}
