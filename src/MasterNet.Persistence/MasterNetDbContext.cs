@@ -9,25 +9,14 @@ namespace MasterNet.Persistence;
 
 public class MasterNetDbContext : IdentityDbContext<AppUser>
 {
+    public MasterNetDbContext(DbContextOptions<MasterNetDbContext> options) : base(options)
+    {
+    }
 
     public DbSet<Curso>? Cursos { get; set; }
     public DbSet<Instructor>? Instructores { get; set; }
     public DbSet<Precio>? Precios { get; set; }
     public DbSet<Calificacion>? Calificaciones { get; set; }
-
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-
-        optionsBuilder.UseSqlite("Data Source=LocalDatabase.db")
-        .LogTo(
-            Console.WriteLine,
-            new[] { DbLoggerCategory.Database.Command.Name },
-            Microsoft.Extensions.Logging.LogLevel.Information
-            ).EnableSensitiveDataLogging();
-
-    }
-
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
