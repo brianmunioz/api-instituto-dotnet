@@ -17,8 +17,6 @@ public static class DataSeed
         var service = scope.ServiceProvider;
         var loggerFactory = service.GetRequiredService<ILoggerFactory>();
         var userManager = service.GetRequiredService<UserManager<AppUser>>();
-
-
         try
         {
             var context = service.GetRequiredService<MasterNetDbContext>();
