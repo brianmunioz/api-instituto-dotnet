@@ -4,7 +4,7 @@ using MasterNet.Persistence;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace MasterNet.Application.Cursos;
+namespace MasterNet.Application.Cursos.CursoReporteExcel;
 
 public class CursoReporteExcelQuery
 {
@@ -12,11 +12,11 @@ public class CursoReporteExcelQuery
     internal class CursoReporteExcelQueryHandler
     : IRequestHandler<CursoReporteExcelQueryRequest, MemoryStream>
     {
-private readonly MasterNetDbContext _context;
+        private readonly MasterNetDbContext _context;
         private readonly IReportService<Curso> _reportService;
 
         public CursoReporteExcelQueryHandler(
-            MasterNetDbContext context, 
+            MasterNetDbContext context,
             IReportService<Curso> reportService
         )
         {
@@ -24,7 +24,10 @@ private readonly MasterNetDbContext _context;
             _reportService = reportService;
         }
 
-        public async Task<MemoryStream> Handle(CursoReporteExcelQueryRequest request, CancellationToken cancellationToken)
+        public async Task<MemoryStream> Handle(
+            CursoReporteExcelQueryRequest request,
+             CancellationToken cancellationToken
+        )
         {
             var cursos = await _context.Cursos!.Take(10).Skip(0).ToListAsync();
             return await _reportService.GetCsvReport(cursos);

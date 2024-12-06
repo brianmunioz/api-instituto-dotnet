@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MasterNet.Persistence")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+886142e8dd33cb2a205dadd89bd2e87af592aea4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2f92320d2f96d0eb2521c1441e19544f1069d0b9")]
 [assembly: System.Reflection.AssemblyProductAttribute("MasterNet.Persistence")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MasterNet.Persistence")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
