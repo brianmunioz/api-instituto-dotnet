@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "NA+xXXf8GtjnjDUHcMxfOqVm3bSz1aoNhE3uHhMvpvkp4h47Pi2HQU2KoNzM4qobeJIjv3hwjOvjvZfIdx7K6g==",
+  "dgSpecHash": "NKSkY3u9sb2LT9QSVVvXdo3VBn6KNgLKhkslpYg66/mgA+SCA5LIvIl/KAQibZ1HMnrritaK4jcYuRDvzC1pFw==",
   "success": true,
   "projectFilePath": "C:\\Users\\PC\\Desktop\\sistema-instituto\\src\\MasterNet.WebApi\\MasterNet.WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PC\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\bogus\\35.4.0\\bogus.35.4.0.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\csvhelper\\31.0.3\\csvhelper.31.0.3.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
