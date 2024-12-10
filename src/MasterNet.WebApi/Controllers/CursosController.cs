@@ -1,3 +1,4 @@
+using MasterNet.Application.Core;
 using MasterNet.Application.Cursos.CursoCreate;
 using MasterNet.Application.Cursos.CursoReporteExcel;
 using MediatR;
@@ -14,13 +15,13 @@ public CursosController(ISender sender){
     _sender = sender;
 }
 [HttpPost("create")]
-public async Task<ActionResult<Guid>> CursoCreate(
+public async Task<ActionResult<Result<Guid>>> CursoCreate(
    [FromForm] CursoCreateRequest request,
    CancellationToken cancellationToken 
 ) {
 var command = new CursosCreateCommandRequest(request);
-var resultado = await _sender.Send(command,cancellationToken);
-return Ok(resultado);
+return await _sender.Send(command,cancellationToken);
+
 }
 
 [HttpGet("reporte")]
