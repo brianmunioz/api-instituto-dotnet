@@ -145,3 +145,5 @@ C:\Users\PC\Desktop\sistema-instituto\src\MasterNet.WebApi\bin\Debug\net9.0\zh-H
 C:\Users\PC\Desktop\sistema-instituto\src\MasterNet.WebApi\bin\Debug\net9.0\CsvHelper.dll
 C:\Users\PC\Desktop\sistema-instituto\src\MasterNet.WebApi\bin\Debug\net9.0\MasterNet.Infrastructure.dll
 C:\Users\PC\Desktop\sistema-instituto\src\MasterNet.WebApi\bin\Debug\net9.0\MasterNet.Infrastructure.pdb
+C:\Users\PC\Desktop\sistema-instituto\src\MasterNet.Webapi\bin\Debug\net9.0\appsettings.Production.json
+C:\Users\PC\Desktop\sistema-instituto\src\MasterNet.Webapi\bin\Debug\net9.0\appsettings.Staging.json

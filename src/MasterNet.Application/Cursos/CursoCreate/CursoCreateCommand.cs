@@ -1,3 +1,4 @@
+using FluentValidation;
 using MasterNet.Application.Core;
 using MasterNet.Domain;
 using MasterNet.Persistence;
@@ -34,6 +35,16 @@ public class CursoCreateCommand
             :
             Result<Guid>.Failure("No se pudo insertar el grupo");
 
+        }
+    }
+
+    public class CursosCreateRequestValidator
+    : AbstractValidator<CursosCreateCommandRequest>
+    {
+        //En esta clase se inyecta las validaciones hechas en cursocreatevalidation
+        public CursosCreateRequestValidator()
+        {
+            RuleFor(x=>x.cursoCreateRequest).SetValidator(new CursoCreateValidation());
         }
     }
 
