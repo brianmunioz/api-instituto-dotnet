@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NKSkY3u9sb2LT9QSVVvXdo3VBn6KNgLKhkslpYg66/mgA+SCA5LIvIl/KAQibZ1HMnrritaK4jcYuRDvzC1pFw==",
+  "dgSpecHash": "mDmyZ8HqMrNu99JIJs7lTK6FcwRUhyhzR3PvH/iv6UjZtB7JtvE/mnGI5a10Y811Mox3YpMgmCAN07lQf7ulGg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\PC\\Desktop\\sistema-instituto\\src\\MasterNet.WebApi\\MasterNet.WebApi.csproj",
+  "projectFilePath": "C:\\Users\\PC\\Desktop\\sistema-instituto\\src\\MasterNet.Webapi\\MasterNet.WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PC\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\bogus\\35.4.0\\bogus.35.4.0.nupkg.sha512",

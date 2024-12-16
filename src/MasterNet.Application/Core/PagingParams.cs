@@ -1,5 +1,5 @@
 namespace MasterNet.Application.Core;
-public class PagingParams
+public abstract class PagingParams
 {
     public int PageNumber { get; set;}
     private const int MaxPageSize = 50;
@@ -10,5 +10,4 @@ public class PagingParams
     }
     public string? OrderBy {get;set;}
     public bool? OrderByAsc {get;set;} = true;
-
 }
