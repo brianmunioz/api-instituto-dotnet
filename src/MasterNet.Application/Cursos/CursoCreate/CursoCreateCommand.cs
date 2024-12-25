@@ -1,5 +1,6 @@
 using FluentValidation;
 using MasterNet.Application.Core;
+using MasterNet.Application.Interfaces;
 using MasterNet.Domain;
 using MasterNet.Persistence;
 using MediatR;
@@ -13,21 +14,42 @@ public class CursoCreateCommand
     : IRequestHandler<CursosCreateCommandRequest, Result<Guid>>
     {
         private readonly MasterNetDbContext _context;
+        private readonly IPhotoService _photoService;
 
-        public CursoCreateCommandHandler(MasterNetDbContext context){
+        public CursoCreateCommandHandler
+        (
+            MasterNetDbContext context,
+            IPhotoService photoService
+        )
+        {
             _context = context;
+            _photoService = photoService;
         }
         public async Task<Result<Guid>> Handle(
         CursosCreateCommandRequest request,
         CancellationToken cancellationToken
         )
         {
+            var cursoId = Guid.NewGuid();
             var curso = new Curso{
-                Id = Guid.NewGuid(),
+                Id = cursoId,
                 Titulo = request.cursoCreateRequest.Titulo,
                 Descripcion = request.cursoCreateRequest.Descripcion,
                 FechaPublicacion = request.cursoCreateRequest.FechaPublicacion
             };
+            if(request.cursoCreateRequest.Foto is not null)
+            {
+             var photoUploadResult =  await  _photoService.AddPhoto(request.cursoCreateRequest.Foto);
+             var photo = new Photo
+             {
+                Id = Guid.NewGuid(),
+                PublicId = photoUploadResult.PublicId,
+                Url = photoUploadResult.Url,
+                CursoId = cursoId
+             };
+             curso.Photos = new List<Photo>{photo};
+
+            }
             _context.Add(curso);
             var resultado = await _context.SaveChangesAsync() > 0;
             return resultado ? 
