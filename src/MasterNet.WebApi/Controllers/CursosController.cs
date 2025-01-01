@@ -1,6 +1,7 @@
 using MasterNet.Application.Core;
 using MasterNet.Application.Cursos.CursoCreate;
 using MasterNet.Application.Cursos.CursoReporteExcel;
+using MasterNet.Application.Cursos.CursoUpdate;
 using MasterNet.Application.Cursos.GetCursos;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -39,7 +40,7 @@ public class CursosController : ControllerBase
         return resultado.IsSuccess ? Ok(resultado.Value) : BadRequest();
     }
 
-    [HttpPost("create")]
+    [HttpPost]
     public async Task<ActionResult<Result<Guid>>> CursoCreate(
        [FromForm] CursoCreateRequest request,
        CancellationToken cancellationToken
@@ -47,6 +48,19 @@ public class CursosController : ControllerBase
     {
         var command = new CursosCreateCommandRequest(request);
         return await _sender.Send(command, cancellationToken);
+
+    }
+
+    [HttpPut]
+    public async Task<ActionResult<Result<Guid>>> CursoUpdate(
+        [FromBody] CursoUpdateRequest request,
+        Guid id,
+        CancellationToken cancellationToken
+    )
+    {
+        var command = new CursoUpdateCommand.CursoUpdateCommandRequest(request,id);
+        var resultado = await _sender.Send(command,cancellationToken);
+        return resultado.IsSuccess ? Ok(resultado.Value) : BadRequest("No se pudo actualizar el curso");
 
     }
 
