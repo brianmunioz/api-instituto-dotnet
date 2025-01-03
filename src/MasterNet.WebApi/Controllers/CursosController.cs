@@ -1,8 +1,12 @@
+using System.Net;
 using MasterNet.Application.Core;
 using MasterNet.Application.Cursos.CursoCreate;
+using MasterNet.Application.Cursos.CursoDelete;
 using MasterNet.Application.Cursos.CursoReporteExcel;
 using MasterNet.Application.Cursos.CursoUpdate;
+using MasterNet.Application.Cursos.GetCurso;
 using MasterNet.Application.Cursos.GetCursos;
+using MasterNet.Domain;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using static MasterNet.Application.Cursos.CursoCreate.CursoCreateCommand;
@@ -19,7 +23,8 @@ public class CursosController : ControllerBase
         _sender = sender;
     }
     [HttpGet]
-    public async Task<ActionResult> PaginationCursos
+    [ProducesResponseType((int)HttpStatusCode.OK)]
+    public async Task<ActionResult<PagedList<CursoResponse>>> PaginationCursos
     (
         [FromQuery] GetCursosRequest request,
         CancellationToken cancellationToken
@@ -30,7 +35,8 @@ public class CursosController : ControllerBase
         return resultado.IsSuccess ? Ok(resultado.Value) : NotFound();
     }
     [HttpGet("{id}")]
-    public async Task<IActionResult> CursoGet(
+    [ProducesResponseType((int)HttpStatusCode.OK)]
+    public async Task<ActionResult<CursoResponse>> CursoGet(
         Guid id,
         CancellationToken cancellationToken
         )
@@ -47,11 +53,13 @@ public class CursosController : ControllerBase
     )
     {
         var command = new CursosCreateCommandRequest(request);
-        return await _sender.Send(command, cancellationToken);
+        var resultado =  await _sender.Send(command, cancellationToken);
+        return resultado.IsSuccess ? Ok(resultado.Value) : BadRequest("No se pudo crear el curso");
 
     }
 
     [HttpPut]
+    [ProducesResponseType((int)HttpStatusCode.OK)]
     public async Task<ActionResult<Result<Guid>>> CursoUpdate(
         [FromBody] CursoUpdateRequest request,
         Guid id,
@@ -62,6 +70,17 @@ public class CursosController : ControllerBase
         var resultado = await _sender.Send(command,cancellationToken);
         return resultado.IsSuccess ? Ok(resultado.Value) : BadRequest("No se pudo actualizar el curso");
 
+    }
+    [HttpDelete]
+    [ProducesResponseType((int)HttpStatusCode.OK)]
+    public async Task<ActionResult<Unit>> CursoDelete(
+        Guid cursoId,
+        CancellationToken cancellationToken
+    )
+    {
+        var command = new CursoDeleteCommand.CursoDeleteCommandRequest(cursoId);
+        var resultado = await _sender.Send(command,cancellationToken);    
+        return resultado.IsSuccess ? Ok() : BadRequest("No se pudo eliminar el curso");
     }
 
     [HttpGet("reporte")]

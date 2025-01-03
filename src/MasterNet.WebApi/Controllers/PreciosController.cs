@@ -1,3 +1,5 @@
+using System.Net;
+using MasterNet.Application.Core;
 using MasterNet.Application.Precios.GetPrecios;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -16,7 +18,8 @@ public class PreciosController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult> PaginationPrecio
+    [ProducesResponseType((int)HttpStatusCode.OK)]
+    public async Task<ActionResult<PagedList<PrecioResponse>>> PaginationPrecio
     (
         [FromQuery] GetPreciosRequest request,
         CancellationToken cancellationToken

@@ -1,3 +1,4 @@
+using System.Net;
 using MasterNet.Application.Instructores.GetInstructores;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -16,7 +17,8 @@ public class InstructoresController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult> PaginationInstructor
+    [ProducesResponseType((int)HttpStatusCode.OK)]
+    public async Task<ActionResult<InstructorResponse>> PaginationInstructor
     (
         [FromQuery] GetInstructoresRequest request,
         CancellationToken cancellationToken
