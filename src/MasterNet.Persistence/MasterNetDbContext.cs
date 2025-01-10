@@ -47,7 +47,6 @@ public class MasterNetDbContext : IdentityDbContext<AppUser>
             .HasMany(m => m.Photos)
             .WithOne(m => m.Curso)
             .HasForeignKey(m => m.CursoId)
-            .IsRequired()
             .OnDelete(DeleteBehavior.Cascade);
 
         modelBuilder.Entity<Curso>()

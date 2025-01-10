@@ -11,21 +11,20 @@ using Microsoft.AspNetCore.Identity;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddApplication();
 builder.Services.AddPersistence(builder.Configuration);
+builder.Services.AddIdentityServices(builder.Configuration);
 builder.Services
 .Configure<CloudinarySettings>
 (builder.Configuration.GetSection(nameof(CloudinarySettings)));
 builder.Services.AddScoped<IPhotoService, PhotoService>();
 builder.Services.AddScoped(typeof(IReportService<>), typeof(ReportService<>)); //forma de implementar cuando son genericos, cada vez que el contenedor encuentre una dependencia de IReportService hace una instancia de ReportService
-// builder.Services.AddScoped<IReportService, ReportService>(); forma normal de implementar (cuando no es generico)
+// builder.Services.AddScoped<IReport Service, ReportService>(); forma normal de implementar (cuando no es generico)
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddControllers();
 
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddIdentityCore<AppUser>(opt=>{
-    opt.Password.RequireNonAlphanumeric = false;
-    opt.User.RequireUniqueEmail = true;
-}).AddRoles<IdentityRole>().AddEntityFrameworkStores<MasterNetDbContext>();
+
 
 builder.Services.AddMediatR(configuration=>{configuration.RegisterServicesFromAssembly(typeof(Program).Assembly);});
 
@@ -37,6 +36,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseAuthentication();
+app.UseAuthorization();
 await app.SeedDataAuthentication();
 
 app.MapControllers();
